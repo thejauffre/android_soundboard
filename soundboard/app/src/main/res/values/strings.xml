@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LanzaBoard</string>
+    <string name="app_name">SampleSoundboard</string>
     <string name="unpacking_file">Wait, unpacking pack…</string>
     <string name="permission">You need to grant access to: </string>
     <string name="read_perm">read storage</string>
