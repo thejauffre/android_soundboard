@@ -1,9 +1,14 @@
 package com.thejauffre.soundboard.Classes;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
+import androidx.core.content.FileProvider;
+
+import com.thejauffre.soundboard.Activities.MainActivity;
 import com.thejauffre.soundboard.R;
 
 import java.io.BufferedInputStream;
@@ -43,6 +48,24 @@ public class Common {
             Log.d(LOGTAG, e.getMessage());
         }
 
+    }
+
+    public static void shareFile(String filename)
+    {
+        try
+        {
+            String filePath = Environment.getExternalStorageDirectory() + "/" + App.getContext().getString(R.string.app_name) + "/" + filename;
+            File file = new File(filePath);
+            Uri uri = FileProvider.getUriForFile(App.getContext(), App.getContext().getPackageName() + ".fileprovider", file);
+            Intent share = new Intent(Intent.ACTION_SEND);
+            share.setType("audio/*");
+            share.putExtra(Intent.EXTRA_STREAM, uri);
+            App.getContext().startActivity(Intent.createChooser(share, App.getContext().getString(R.string.share)).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        }
+        catch (Exception e)
+        {
+            Log.d(LOGTAG, e.getMessage());
+        }
     }
 
     /**

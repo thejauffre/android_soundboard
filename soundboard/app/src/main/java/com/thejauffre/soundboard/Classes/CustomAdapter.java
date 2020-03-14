@@ -16,6 +16,7 @@ import java.util.List;
 
 import static com.thejauffre.soundboard.Classes.Common.LOGTAG;
 import static com.thejauffre.soundboard.Classes.Common.playFile;
+import static com.thejauffre.soundboard.Classes.Common.shareFile;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
@@ -50,23 +51,36 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     // stores and recycles views as they are scrolled off screen
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView myTextView;
         Button imgButton;
+        Button shareButton;
         String filename;
 
         ViewHolder(View itemView) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.header_name);
             imgButton = itemView.findViewById(R.id.imageButton);
-            imgButton.setOnClickListener(this);
+
+            imgButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d(LOGTAG, "Play element: " + myTextView.getText());
+                    playFile(filename);
+                }
+            });
+
+            shareButton = itemView.findViewById(R.id.shareButton);
+            shareButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d(LOGTAG, "Share element: " + myTextView.getText());
+                        //TODO: implement share method
+                        shareFile(filename);
+                }
+            });
         }
 
-        @Override
-        public void onClick(View view) {
-            Log.d(LOGTAG, "Pressed element: " + myTextView.getText());
-            playFile(filename);
-        }
     }
 
     // convenience method for getting data at click position

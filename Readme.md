@@ -4,6 +4,7 @@ This repository contains a sample soundboard project.
 It is a template containing:
 - custom recycle view adapter
 - user permission request at first launch
+- content provider to share files
 - a zip extractor
 - a mediaplayer
 
