@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SampleSoundboard</string>
+    <string name="unpacking_file">Attendi, sto preparando i file…</string>
+    <string name="permission">Devi concedere i permessi per: </string>
+    <string name="read_perm">leggere la memoria</string>
+    <string name="write_perm">scrivere la memoria</string>
+    <string name="permission_denied">Alcuni permessi non sono stati concessi!</string>
+    <string name="nomedia">.nomedia</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annulla</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LanzaBoard</string>
+    <string name="unpacking_file">Wait, unpacking pack…</string>
+    <string name="permission">You need to grant access to: </string>
+    <string name="read_perm">read storage</string>
+    <string name="write_perm">write storage</string>
+    <string name="permission_denied">Some permissions are denied!</string>
+    <string name="nomedia">.nomedia</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+</resources>
